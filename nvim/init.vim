@@ -9,6 +9,7 @@
 :set guicursor=n-v-c-i:ver1
 :set termguicolors
 :set encoding=UTF-8
+:set clipboard=unnamedplus
 
 call plug#begin()
 
@@ -35,27 +36,40 @@ Plug 'leafgarland/typescript-vim'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
+Plug 'ray-x/lsp_signature.nvim'
+Plug 'nvim-tree/nvim-tree.lua'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'mhinz/vim-startify'
+Plug 'lewis6991/gitsigns.nvim'
 
 call plug#end()
 
-nnoremap <C-f> :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
+" Previous NERDTree bindings
+"nnoremap <C-f> :NERDTreeFocus<CR>
+"nnoremap <C-n> :NERDTree<CR>
+"nnoremap <C-t> :NERDTreeToggle<CR>
+" Now NvimTree
+nnoremap <C-t> :NvimTreeToggle<CR>
+nmap <C-f> :NvimTreeFocus<CR>
 nnoremap <C-l> :call CocActionAsync('jumpDefinition')<CR>
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gr <Plug>(coc-references)
 nmap <leader>rn <Plug>(coc-rename)
+vmap <leader>a <Plug>(coc-codeaction-selected)
+nmap <leader>a <Plug>(coc-codeaction-selected)
 tnoremap <silent> <C-[><C-[> <C-\><C-n>
-
+nmap <silent> <C-p> :call CocActionAsync('runCommand', 'prettier.formatFile')<CR>
+nmap <C-s> :w<CR>
+nmap <C-q> :q<CR>
+nmap <C-w> :wq<CR>
 nmap <F8> :TagbarToggle<CR>
+nnoremap <C-S-C> "+y
 
 :set completeopt-=preview " For No Previews
 
-let g:NERDTreeDirArrowExpandable="+"
-let g:NERDTreeDirArrowCollapsible="~"
-
-		let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
@@ -69,22 +83,30 @@ let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.maxlinenr = '💯'
 let g:airline_symbols.linenr = '📃'
-" let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#formatter = 'unique_tail' 
 
 inoremap <expr> <Enter> pumvisible() ? coc#_select_confirm() : "<Enter>"
 inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
 command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
-autocmd TextChanged,TextChangedI <buffer> if filereadable(expand('%')) | silent write | endif
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') | execute 'cd '.argv()[0] | wincmd l | endif
 
-colorscheme tokyonight
+colorscheme sonokai
 lua << EOF
 require("bufferline").setup{}
 diagnostics = "coc"
+require "lsp_signature".setup({
+bind = true,
+handler_opts = {
+    border = "rounded"
+}
+})
+require("nvim-tree").setup()
+require('gitsigns').setup()
 EOF
 
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+
 
