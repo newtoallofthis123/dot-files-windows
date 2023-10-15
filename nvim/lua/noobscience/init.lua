@@ -1,0 +1,5 @@
+require("noobscience.remaps")
+require("noobscience.plugins")
+require("noobscience.customizations")
+require("noobscience.tree_sitter")
+require("noobscience.lsp")

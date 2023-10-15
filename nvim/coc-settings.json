@@ -1,0 +1,35 @@
+{
+    "coc.preferences.formatOnSaveFiletypes": [
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+        "html",
+        "css",
+        "json",
+        "markdown",
+        "lua",
+        "c",
+        "cpp",
+        "python",
+        "rust",
+        "sass",
+        "scss",
+        "go"
+    ],
+    "coc.preferences.formatOnSave": true,
+    "coc.preferences.formatOnType": true,
+    "rust-analyzer.lens.enable": true,
+    "prettier.enable": true,
+    "cSpell.userWords": ["neodrag", "nvim"],
+    "languageserver": {
+        "go": {
+            "command": "gopls",
+            "rootPatterns": ["go.work", "go.mod", "go.sum", ".git/"],
+            "filetypes": ["go"],
+            "initializationOptions": {
+                "usePlaceholders": true
+            }
+        }
+    }
+}
