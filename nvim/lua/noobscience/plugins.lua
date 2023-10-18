@@ -36,21 +36,21 @@ return require('packer').startup(function(use)
     }
 
     use {
-	"zbirenbaum/copilot.lua",
-	cmd = "Copilot",
-	event = "InsertEnter",
-	config = function()
-		require("copilot").setup({})
-	end,
-	}
+        "zbirenbaum/copilot.lua",
+        cmd = "Copilot",
+        event = "InsertEnter",
+        config = function()
+            require("copilot").setup({})
+        end,
+    }
 
-	use {
-	"zbirenbaum/copilot-cmp",
-	after = { "copilot.lua" },
-	config = function ()
-		require("copilot_cmp").setup()
-	end
-	}
+    use {
+        "zbirenbaum/copilot-cmp",
+        after = { "copilot.lua" },
+        config = function()
+            require("copilot_cmp").setup()
+        end
+    }
 
     use 'onsails/lspkind.nvim'
 
@@ -63,24 +63,68 @@ return require('packer').startup(function(use)
 
     use 'lewis6991/gitsigns.nvim'
 
-    use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
+    use { 'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons' }
 
     use {
-	    "windwp/nvim-autopairs",
+        "windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup {} end
     }
 
     use 'windwp/nvim-ts-autotag'
 
     use {
-        'saecki/crates.nvim', tag='v0.4.0',
+        'saecki/crates.nvim', tag = 'v0.4.0',
         requires = {
-            {'nvim-lua/plenary.nvim'},
+            { 'nvim-lua/plenary.nvim' },
         },
         config = function()
-            require'crates'.setup{}
+            require 'crates'.setup {}
         end
     }
 
     use 'tanvirtin/monokai.nvim'
+
+    use 'tpope/vim-fugitive'
+
+    use({ 'projekt0n/github-nvim-theme' })
+
+    use 'wakatime/vim-wakatime'
+
+    use 'nvim-tree/nvim-tree.lua'
+
+    use 'neovim/nvim-lspconfig'
+
+    use 'simrat39/rust-tools.nvim'
+
+    use 'ray-x/go.nvim'
+
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    }
+
+    use 'Mofiqul/vscode.nvim'
+
+    use({
+        "utilyre/barbecue.nvim",
+        tag = "*",
+        requires = {
+            "SmiteshP/nvim-navic",
+            "nvim-tree/nvim-web-devicons", -- optional dependency
+        },
+        config = function()
+            require("barbecue").setup()
+        end,
+    })
+
+    use { "catppuccin/nvim", as = "catppuccin" }
+    use {
+        'nyngwang/NeoTerm.lua',
+        config = function()
+            require('neo-term').setup {
+                exclude_filetypes = { 'oil' },
+            }
+        end
+    }
+
 end)

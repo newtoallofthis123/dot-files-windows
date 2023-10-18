@@ -1,8 +1,5 @@
 --vim.cmd('colorscheme dracula')
 
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
 vim.opt.termguicolors = true
 
 require("telescope").setup {
@@ -56,6 +53,28 @@ lspkind.init({
 
 require("crates").setup{}
 
-require('monokai').setup { palette = require('monokai').pro}
+--require('monokai').setup { palette = require('monokai').pro}
 
 vim.cmd('autocmd BufNewFile,BufRead *.mdx setfiletype markdown')
+
+require("nvim-tree").setup()
+
+local format_sync_grp = vim.api.nvim_create_augroup("GoFormat", {})
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*.go",
+  callback = function()
+   require('go.format').goimport()
+  end,
+  group = format_sync_grp,
+})
+
+require('lualine').setup()
+
+require('vscode').load()
+
+require('lualine').setup({
+    options = {
+        theme = 'vscode',
+    },
+})
+

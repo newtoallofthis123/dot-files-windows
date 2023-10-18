@@ -13,15 +13,43 @@ require('mason-lspconfig').setup({
 	'dockerls',
 	'pyright',
     'eslint',
-	'rust_analyzer',
 	'tsserver',
 	'vimls',
-    'gopls',
   },
   handlers = {
     lsp_zero.default_setup,
-  },
+  }
 })
+
+--local lspconfig = require('lspconfig')
+--lspconfig.rust_analyzer.setup {
+  --  on_attach = lsp_zero.on_attach,
+    --settings = {
+      --  ["rust_analyzer"] = {
+        --    checkOnSave = true,
+          --  check = {
+            --    enable = true,
+              --  command = "clippy",
+                --features = "all"
+            --}
+        --}
+   -- }
+--}
+
+require('mason-lspconfig').setup_handlers({
+  function(server_name)
+      require("lspconfig")[server_name].setup({ on_attach = on_attach, capabilities = capabilities })
+    end,
+
+    ["rust_analyzer"] = function ()
+        require("rust-tools").setup()
+    end,
+
+    ["gopls"] = function ()
+        require("go").setup()
+    end
+})
+
 
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
@@ -57,7 +85,6 @@ lsp_zero.set_sign_icons({
   info = '»'
 })
 
-lsp_zero.extend_lspconfig()
 lsp_zero.on_attach(function(client, bufnr)
   local opts = {buffer = bufnr, remap = false}
 
@@ -73,6 +100,6 @@ lsp_zero.on_attach(function(client, bufnr)
   vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
 
+lsp_zero.extend_lspconfig()
 lsp_zero.setup()
 vim.keymap.set("n", "<leader>uf", function() vim.lsp.buf.formatting() end, {buffer = 0})
-

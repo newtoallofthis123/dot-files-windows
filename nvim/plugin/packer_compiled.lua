@@ -79,10 +79,27 @@ _G.packer_plugins = {
     path = "C:\\Users\\joshi\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["NeoTerm.lua"] = {
+    config = { "\27LJ\2\n_\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\22exclude_filetypes\1\0\0\1\2\0\0\boil\nsetup\rneo-term\frequire\0" },
+    loaded = true,
+    path = "C:\\Users\\joshi\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\NeoTerm.lua",
+    url = "https://github.com/nyngwang/NeoTerm.lua"
+  },
+  ["barbecue.nvim"] = {
+    config = { "\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rbarbecue\frequire\0" },
+    loaded = true,
+    path = "C:\\Users\\joshi\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\barbecue.nvim",
+    url = "https://github.com/utilyre/barbecue.nvim"
+  },
   ["bufferline.nvim"] = {
     loaded = true,
     path = "C:\\Users\\joshi\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\bufferline.nvim",
     url = "https://github.com/akinsho/bufferline.nvim"
+  },
+  catppuccin = {
+    loaded = true,
+    path = "C:\\Users\\joshi\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\catppuccin",
+    url = "https://github.com/catppuccin/nvim"
   },
   ["cmp-nvim-lsp"] = {
     loaded = true,
@@ -120,10 +137,20 @@ _G.packer_plugins = {
     path = "C:\\Users\\joshi\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\fzf",
     url = "https://github.com/junegunn/fzf"
   },
+  ["github-nvim-theme"] = {
+    loaded = true,
+    path = "C:\\Users\\joshi\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\github-nvim-theme",
+    url = "https://github.com/projekt0n/github-nvim-theme"
+  },
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "C:\\Users\\joshi\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
+  ["go.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\joshi\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\go.nvim",
+    url = "https://github.com/ray-x/go.nvim"
   },
   ["lsp-zero.nvim"] = {
     loaded = true,
@@ -134,6 +161,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\joshi\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\lspkind.nvim",
     url = "https://github.com/onsails/lspkind.nvim"
+  },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\joshi\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
   },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
@@ -171,6 +203,16 @@ _G.packer_plugins = {
     path = "C:\\Users\\joshi\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-navic"] = {
+    loaded = true,
+    path = "C:\\Users\\joshi\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-navic",
+    url = "https://github.com/SmiteshP/nvim-navic"
+  },
+  ["nvim-tree.lua"] = {
+    loaded = true,
+    path = "C:\\Users\\joshi\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-tree.lua",
+    url = "https://github.com/nvim-tree/nvim-tree.lua"
+  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "C:\\Users\\joshi\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-treesitter",
@@ -196,6 +238,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\joshi\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ["rust-tools.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\joshi\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\rust-tools.nvim",
+    url = "https://github.com/simrat39/rust-tools.nvim"
+  },
   ["telescope-file-browser.nvim"] = {
     loaded = true,
     path = "C:\\Users\\joshi\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\telescope-file-browser.nvim",
@@ -210,18 +257,41 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\joshi\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim",
     url = "https://github.com/dracula/vim"
+  },
+  ["vim-fugitive"] = {
+    loaded = true,
+    path = "C:\\Users\\joshi\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-fugitive",
+    url = "https://github.com/tpope/vim-fugitive"
+  },
+  ["vim-wakatime"] = {
+    loaded = true,
+    path = "C:\\Users\\joshi\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-wakatime",
+    url = "https://github.com/wakatime/vim-wakatime"
+  },
+  ["vscode.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\joshi\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vscode.nvim",
+    url = "https://github.com/Mofiqul/vscode.nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: crates.nvim
-time([[Config for crates.nvim]], true)
-try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\vcrates\frequire\0", "config", "crates.nvim")
-time([[Config for crates.nvim]], false)
+-- Config for: barbecue.nvim
+time([[Config for barbecue.nvim]], true)
+try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rbarbecue\frequire\0", "config", "barbecue.nvim")
+time([[Config for barbecue.nvim]], false)
 -- Config for: nvim-autopairs
 time([[Config for nvim-autopairs]], true)
 try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
 time([[Config for nvim-autopairs]], false)
+-- Config for: NeoTerm.lua
+time([[Config for NeoTerm.lua]], true)
+try_loadstring("\27LJ\2\n_\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\22exclude_filetypes\1\0\0\1\2\0\0\boil\nsetup\rneo-term\frequire\0", "config", "NeoTerm.lua")
+time([[Config for NeoTerm.lua]], false)
+-- Config for: crates.nvim
+time([[Config for crates.nvim]], true)
+try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\vcrates\frequire\0", "config", "crates.nvim")
+time([[Config for crates.nvim]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)

@@ -15,6 +15,4 @@ vim.cmd("set encoding=UTF-8")
 vim.cmd("set clipboard=unnamedplus")
 vim.cmd("set wildmenu")
 
-vim.api.nvim_set_hl(0, 'Normal', {bg='none'})
-vim.api.nvim_set_hl(0, 'NormalFloat', {bg='none'})
 vim.api.nvim_set_keymap('n', '<leader>n', ':e <Space>', { noremap = true })
